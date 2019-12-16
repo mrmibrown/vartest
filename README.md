@@ -1,7 +1,7 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+This role will install the 'tree' package using the 'yum' module.
 
 Requirements
 ------------
@@ -21,11 +21,11 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+An example of how to use the role:
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: mrmibrown.treetest }
 
 License
 -------
