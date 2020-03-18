@@ -1,6 +1,6 @@
 galaxy_info:
   author: mrmibrown
-  description: your description
+  description: Sample role that install 'tree' using the 'yum' module
   company: your company (optional)
 
   # If the issue tracker for your role is not on github, uncomment the
