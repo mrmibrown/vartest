@@ -1,5 +1,23 @@
 ---
-- name: Install package
-  yum:
-    name: tree
-    state: present
+- name: Testing Debug Parameters
+  hosts: all
+  remote_user: ec2-user
+  become: yes
+  #vars:
+    #dogfood: pedigree
+
+  tasks:
+  - fail:
+      msg: The fail module msg goes here
+    failed_when: dogfood == ""
+
+  - name: Debug with var equals
+    debug: var=dogfood
+
+  - name: Debug with var parameter
+    debug:
+      var: dogfood
+
+  - name: Debug with msg parameter
+    debug:
+      msg: "Testing msg debug --> {{ dogfood }}"
