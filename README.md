@@ -25,7 +25,7 @@ An example of how to use the role:
 
     - hosts: servers
       roles:
-         - { role: mrmibrown.treetest }
+         - { role: mrmibrown.vartest }
 
 License
 -------
@@ -36,4 +36,4 @@ Author Information
 ------------------
 
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
-# treetest
+# vartest
