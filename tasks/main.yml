@@ -4,20 +4,19 @@
   remote_user: ec2-user
   become: yes
   #vars:
-    #dogfood: pedigree
+    #fwbuilder_filter: pedigree
 
   tasks:
-  - fail:
-      msg: The fail module msg goes here
-    failed_when: dogfood == ""
+  - fail: msg="fwbuilder_filter must be defined. Set to 'all' if you want to run fwbuilder for all rules"
+    failed_when: fwbuilder_filter == ""
 
   - name: Debug with var equals
-    debug: var=dogfood
+    debug: var=fwbuilder_filter
 
   - name: Debug with var parameter
     debug:
-      var: dogfood
+      var: fwbuilder_filter
 
   - name: Debug with msg parameter
     debug:
-      msg: "Testing msg debug --> {{ dogfood }}"
+      msg: "Testing msg debug --> {{ fwbuilder_filter }}"
