@@ -1,4 +1,4 @@
-Treetest Sample Role
+vartest Sample Role
 =========
 
 This role will install the 'tree' package using the 'yum' module.
