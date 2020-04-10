@@ -1,22 +1,15 @@
 ---
-- name: Testing Debug Parameters
-  hosts: all
-  remote_user: ec2-user
-  become: yes
-  #vars:
-    #fwbuilder_filter: pedigree
+- name: Checking var now
+  fail: msg="The var dogfood must be defined."
+  failed_when: dogfood == ""
 
-  tasks:
-  - fail: msg="fwbuilder_filter must be defined. Set to 'all' if you want to run fwbuilder for all rules"
-    failed_when: fwbuilder_filter == ""
+- name: Debug with var equals
+  debug: var=dogfood
 
-  - name: Debug with var equals
-    debug: var=fwbuilder_filter
+- name: Debug with var parameter
+  debug:
+    var: dogfood
 
-  - name: Debug with var parameter
-    debug:
-      var: fwbuilder_filter
-
-  - name: Debug with msg parameter
-    debug:
-      msg: "Testing msg debug --> {{ fwbuilder_filter }}"
+- name: Debug with msg parameter
+  debug:
+    msg: "Testing msg debug --> {{ dogfood }}"
